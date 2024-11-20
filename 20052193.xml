@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <serial>20052193</serial> <!-- Replace with the actual serial number of the PI 640i -->
+  <videoformatindex>1</videoformatindex> <!-- Adjust this based on the available video formats for the PI 640i -->
+  <formatspath>.\</formatspath>
+
+  <fov>33</fov> <!-- Field of View (FOV) can be adjusted based on the lens configuration: 33°, 15°, 60°, 90° -->
+  <temperature>
+    <min>-20</min>
+    <max>900</max> <!-- You can modify these ranges based on the application and the available temperature ranges: -20 °C to 1500 °C -->
+  </temperature>
+  <optics_text></optics_text>
+
+  <framerate>125</framerate> <!-- Adjust this if needed based on the available frame rates (e.g., 32 Hz or 125 Hz @ 640x120 pixels) -->
+  <bispectral>0</bispectral> <!-- Set to 0 for thermal-only sensors -->
+
+  <autoflag>
+    <enable>1</enable> <!-- Enable automatic flag cycle -->
+    <mininterval>15.0</mininterval> <!-- Minimum time between flag cycles -->
+    <maxinterval>0.0</maxinterval> <!-- Set to 0 to disable max interval -->
+  </autoflag>
+
+  <tchipmode>0</tchipmode> <!-- Default chip mode -->
+  <tchipfixedvalue>40.0</tchipfixedvalue> <!-- Fixed value for tchip mode (if needed) -->
+
+  <focus>-1</focus> <!-- Disable focus change on startup (you can adjust this if auto-focus is available) -->
+
+  <enable_extended_temp_range>0</enable_extended_temp_range> <!-- Extended temperature range; set to 1 if available and required -->
+  <buffer_queue_size>5</buffer_queue_size> <!-- Adjust buffer size as needed -->
+
+  <enable_high_precision>1</enable_high_precision> <!-- Enable high precision temperatures -->
+
+  <radial_distortion_correction>0</radial_distortion_correction> <!-- Enable radial distortion correction if needed -->
+
+  <use_external_probe>0</use_external_probe> <!-- Set to 1 if an external probe is used -->
+
+  <!-- Ethernet settings (optional, only for Ethernet-capable devices like Xi series) -->
+  <!-- 
+  <device_api>5</device_api>
+  <ethernet_device>
+    <device_ip_address>192.168.0.11</device_ip_address>
+    <local_udp_port>65535</local_udp_port>
+    <check_udp_sender_ip>1</check_udp_sender_ip>
+  </ethernet_device>
+  -->
+</imager>
+
+
+
+<formatspath>/opt/piimager</formatspath> <– The Folder contains the Formats.def file (raw camera formats)
+<imager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<serial>20052193L</serial>
+ <videoformatindex>0</videoformatindex> 
+ <calipath>.</calipath> 
+ <fov>33</fov> 
+ <temperature>
+  <min>-20</min>
+  <max>100</max>
+ </temperature>
+ <optics_text></optics_text>
+ <framerate>32.0</framerate> <– Framerate must be less or equal to the Camera framerate
+ <outputmode>2</outputmode> <– 1=Energy, 2=Temperature
+ <bispectral>0</bispectral> <– 0=only thermal sensor, 1=bispectral technology (only PI200/PI230)
+ <autoflag>
+  <enable>1</enable>
+  <mininterval>15.0</mininterval>
+  <maxinterval>0.0</maxinterval>
+ </autoflag>
+ <tchipmode>0</tchipmode> <– 0=Floating (default), 1=Auto, 2=Fixed value -->
+ <tchipfixedvalue>40.0</tchipfixedvalue> <– Fixed value for tchipmode=2 -->
+ <focus>-1</focus>
+ <buffer_queue_size>5</buffer_queue_size> <– internal buffer queue size -->
+ <enable_high_precision>0</enable_high_precision> <– 0=Off, 1=On; Enables temperatures with more than 1 decimal places. Depends on used camera(IRImager::getTemprangeDecimal()).-->
+ <radial_distortion_correction>0</radial_distortion_correction>
+ <use_external_probe>0</use_external_probe> <– 0=Off, 1=On; Temperatures values of external probe BR20AR are accessible on PIFs first analog input in °C-->
+</imager> 

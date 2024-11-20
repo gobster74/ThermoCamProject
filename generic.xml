@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <serial>0</serial>                     <!-- Provide serial number, if you attach more than one camera -->
+  <videoformatindex>3</videoformatindex> <!-- index of the used video format resolution and framerate (USB enpoint): http://documentation.evocortex.com/libirimager2/html/index.html#sec_videoformat -->
+  <formatspath>.\</formatspath>
+
+
+  <fov>0</fov>
+  <temperature>
+    <min>600</min>
+    <max>1800</max>
+  </temperature>
+  <optics_text></optics_text>
+
+  <framerate>1000</framerate>             <!-- only scaled down frame rate, maximum framerate depends on the chosen <videoformatindex> -->
+  <bispectral>0</bispectral>              <!-- 0=only thermal sensor, 1=bispectral technology (only PI200/PI230) -->
+  <autoflag>
+    <enable>1</enable> <!-- 0=Off, 1=On; Enables automatic flag cycle depending on internal camera temperature or time-->
+    <mininterval>15.0</mininterval> <!-- Minimum duration in seconds between flag cycle-->
+    <maxinterval>0.0</maxinterval> <!-- Maximum duration in seconds between flag cycle. Set to 0 to disable.-->
+  </autoflag>
+  <tchipmode>0</tchipmode>                <!-- 0=Floating (default), 1=Auto, 2=Fixed value -->
+  <tchipfixedvalue>40.0</tchipfixedvalue> <!-- Fixed value for tchipmode=2 -->
+  <focus>-1</focus> <!-- position of focus motor in % of range [0; 100]; Set to negative value to disable focus change on startup -->
+  <enable_extended_temp_range>0</enable_extended_temp_range> <!-- 0=Off, 1=On; Caution! Enables invalid extended temp range-->
+  <buffer_queue_size>50</buffer_queue_size> <!-- internal buffer queue size -->
+  <enable_high_precision>0</enable_high_precision> <!-- 0=Off, 1=On; Enables temperatures with more than 1 decimal places. Depends on used camera(IRImager::getTemprangeDecimal()).-->
+  <radial_distortion_correction>0</radial_distortion_correction> <!-- Distortion correction: 0=Off, 1=Normal, 2=Wide -->
+  <use_external_probe>0</use_external_probe> <!-- 0=Off, 1=On; Temperatures values of external probe BR20AR are accessible on PIFs first analog input in °C-->
+
+
+
+</imager>

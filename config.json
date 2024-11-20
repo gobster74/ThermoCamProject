@@ -1,0 +1,20 @@
+{
+    "log_dir": "logs",
+    "frame_data_dir": "frame_data",
+    "camera_frames": {
+      "PI 1M": {
+        "full": "17092037f.xml",
+        "reduced": "17092037.xml"
+      },
+      "PI 640i": {
+        "full": "6060300f.xml",
+        "reduced": "6060300.xml"
+      }
+    },
+    "frame_dimensions": {
+      "PI 1M": {"width": 764, "height": 480},
+      "PI 640i": {"width": 640, "height": 480}
+    },
+    "frame_mode": "full"  
+  }
+  

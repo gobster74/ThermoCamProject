@@ -1,0 +1,4 @@
+# Ignore all .npy and .bin files
+*.npy
+*.bin
+*.log
